@@ -1,14 +1,20 @@
 #!/usr/bin/python3
-"""a flask web application that listens on port 0.0.0.0, and displays "Hello HBNB!"""""
-from flask import Flask
+"""
+This module contains a Flask web application.
 
+The web application listens on 0.0.0.0, port 5000 and has the following routes:
+- '/': displays "Hello HBNB!"
+"""
+
+from flask import Flask
 app = Flask(__name__)
 
-@app.route("/", strict_slashes=False)
+@app.route('/', strict_slashes=False)
 def hello():
-    """this function handles the route '/' """
+    """
+    This function handles the route '/' and returns "Hello HBNB!".
+    """
     return "Hello HBNB!"
-
 
 if __name__ == '__main__':
     """
