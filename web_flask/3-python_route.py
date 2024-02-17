@@ -1,4 +1,4 @@
-#!/bin/bash/python3
+#!/usr/bin/python3
 """flask web app that runs 4 routes"""
 from flask import Flask
 
