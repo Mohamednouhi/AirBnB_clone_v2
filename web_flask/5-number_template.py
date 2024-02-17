@@ -23,7 +23,7 @@ def c(text):
 @app.route('/python')
 @app.route('/python/<text>')
 def python(text='is cool'):
-    text = text/replace('_',' ')
+    text = text.replace('_',' ')
     return f"Python {text}"
 
 @app.route('/number/<int:n>')
@@ -32,7 +32,7 @@ def number(n):
 
 @app.route('/number_template/<int:n>')
 def number_template(n):
-    return render_template(5-number.html, n=n)
+    return render_template('5-number.html', n=n)
 
 if __name__=='__main__':
     app.run(host='0.0.0.0', port=5000)
