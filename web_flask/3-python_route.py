@@ -20,8 +20,9 @@ def c(text):
     text_variable = text.replace(' ', '_')
     return f"C {text_variable}"
 
+@app.route('/python/', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
-def python(text):
+def python(text='is cool'):
     """displays Python followed by the text """
     text_variable=text.replace(' ', '_')
     return f"Python {text_variable}"
