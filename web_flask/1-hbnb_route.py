@@ -1,4 +1,4 @@
-#!/usr/bin/pyton3
+#!/usr/bin/python3
 
 """we import flask"""
 from flask import Flask
@@ -16,3 +16,4 @@ def hbnb():
 
 if __name__=='__main__':
     app.run(host='0.0.0.0', port=5000)
+
