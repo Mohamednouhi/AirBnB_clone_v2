@@ -3,30 +3,35 @@
 from flask import Flask
 
 app = Flask(__name__)
+app.url_map.strict_slashes = False
 
-@app.route('/', strict_slashes=False)
+
+@app.route('/')
 def hello_world():
-    """'displays  Hello HBNB!"""
-    return "Hello HBNB!"
+    """ Returns some text. """
+    return 'Hello HBNB!'
 
-@app.route('/hbnb', strict_slashes=False)
-def hbnb():
-    """displays  HBNB!"""
-    return "HBNB"
 
-@app.route('/c/<text>', strict_slashes=False)
-def c(text):
-    """displays C followed by the text"""
-    text_variable = text.replace(' ', '_')
-    return f"C {text_variable}"
+@app.route('/hbnb')
+def hello():
+    """ Return other text. """
+    return 'HBNB'
 
-@app.route('/python/', strict_slashes=False)
-@app.route('/python/<text>', strict_slashes=False)
-def python(text='is cool'):
-    """displays Python followed by the text """
-    text_variable=text.replace(' ', '_')
-    return f"Python {text_variable}"
 
-if __name__=='__main__':
-    app.run(host='0.0.0.0', port=5000)
+@app.route('/c/<text>')
+def c_text(text):
+    """ replace text with variable. """
+    text = text.replace('_', ' ')
+    return f"C {text}"
 
+
+@app.route('/python/')
+@app.route('/python/<text>')
+def python_text(text='is cool'):
+    """ replace more text with another variable. """
+    text = text.replace('_', ' ')
+    return f"Python {text}"
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=50
