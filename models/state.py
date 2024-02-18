@@ -9,7 +9,6 @@ from models.city import City
 import shlex
 from os import getenv
 
-
 class State(BaseModel, Base):
     """The class for State
     Attributes:
@@ -36,3 +35,4 @@ class State(BaseModel, Base):
                 if (elem.state_id == self.id):
                     result.append(elem)
             return (result)
+
