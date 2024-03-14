@@ -9,7 +9,7 @@ The web application listens on 0.0.0.0, port 5000 and has the following routes:
 from flask import Flask
 app = Flask(__name__)
 
-@app.route('/', strict_slashes=False)
+@app.route('/airbnb-onepage/', strict_slashes=False)
 def hello_world():
     """
     This function handles the route '/' and returns "Hello HBNB!".
